@@ -24,14 +24,20 @@ $(call inherit-product, $(LOCAL_PATH)/properties.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Firmware
+$(call inherit-product, vendor/firmware/firmware.mk)
+
+#ANX Camera
+$(call inherit-product-if-exists, vendor/anx-camera/anx-camera.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-mokee
+    $(LOCAL_PATH)/overlay-bliss
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
+    $(LOCAL_PATH)/overlay-bliss/bliss-sdk
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
@@ -224,6 +230,10 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
+# Info
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bliss.maintainer=dimasyudha
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
@@ -248,11 +258,6 @@ PRODUCT_PACKAGES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sirius
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@2.0-service-sdm \
-    vendor.mokee.livedisplay@2.0-service.xiaomi_sirius
 
 # Media
 PRODUCT_PACKAGES += \

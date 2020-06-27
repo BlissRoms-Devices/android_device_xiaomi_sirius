@@ -1,0 +1,32 @@
+[
+  {
+    "repository": "dimasyudhaofficial/device_xiaomi_sirius",
+    "target_path": "device/xiaomi/sirius",
+    "branch": "ten-bliss",
+    "remote": "github"
+  },  
+  {
+    "repository": "dimasyudhaofficial/vendor_xiaomi_sirius",
+    "target_path": "vendor/xiaomi/sirius",
+    "branch": "ten",
+    "remote": "github"
+  },
+  {
+    "repository": "dimasyudhaofficial/morph-sirius",
+    "target_path": "kernel/xiaomi/sirius",
+    "branch": "ten",
+    "remote": "github"
+  },
+  {
+    "repository": "dimasyudhaofficial/vendor_anx-camera",
+    "target_path": "vendor/anx-camera",
+    "branch": "miui-12",
+    "remote": "github"
+  },
+  {
+    "repository": "dimasyudhaofficial/vendor_firmware",
+    "target_path": "vendor/firmware",
+    "branch": "miui-12",
+    "remote": "github"
+  }
+]

@@ -15,9 +15,9 @@ VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-MK_ROOT="${MY_DIR}"/../../..
+BLISS_ROOT="${MY_DIR}"/../../..
 
-HELPER="${MK_ROOT}/vendor/mokee/build/tools/extract_utils.sh"
+HELPER="${BLISS_ROOT}/vendor/bliss/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -54,7 +54,7 @@ if [ -z "${SRC}" ]; then
 fi
 
 # Initialize the helper for sirius
-setup_vendor "${DEVICE}" "${VENDOR}" "${MK_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${BLISS_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
