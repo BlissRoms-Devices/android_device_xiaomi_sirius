@@ -17,5 +17,7 @@
 <resources>
     <color name="switchbar_switch_track_tint">#82000000</color>
     <color name="switchbar_switch_thumb_tint">@android:color/black</color>
+    <!-- Whether to display spectrum settings -->
+    <bool name="device_supports_spectrum">true</bool>
 </resources>
 
